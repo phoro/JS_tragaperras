@@ -10,39 +10,41 @@
 </head>
 
 <body>
-    <!--Panell superior-->
-    <div id="contador">
-        <p id="monedero">0000</p>
-
-    </div>
-    <!--Panell central-->
-    <div id="central">
-        <div class="frutas">
-            <img class="frutas" id="slot1" />
+    <!--Bloc esquerre-->
+    <div id="left"><p>.</p></div>
+    <!--Bloc central-->
+    <div id="center">
+        <!--Panell superior-->
+        <div id="contador">
+            <p id="monedero">0000</p>
         </div>
-        <div class="frutas">
-            <img class="frutas" id="slot2" />
+        <!--Panell central-->
+        <div id="central">
+            <!--Panell dreta-->
+            <div id="dreta">
+                <button id="addcash" onclick="tragaperras_UF3().afegeixDiners()">INSERT COINS</button>
+                <button id="exit" onclick="tragaperras_UF3().mostraWallet()">EXIT</button>
+            </div>
+            <div >
+                <img class="frutas" id="slot1" />
+            </div>
+            <div >
+                <img class="frutas" id="slot2" />
+            </div>
+            <div >
+                <img class="frutas" id="slot3" />
+            </div>
+            <!--Panell inferior-->
+            <div id="inferior">
+                <button id="play" onclick="tragaperras_UF3().cridaExterna()">PLAY!</button>
+            </div>
         </div>
-        <div class="frutas">
-            <img class="frutas" id="slot3" />
+    </div>
+    <!--Bloc dret-->
+    <div id="right">
+        <!--Panell llista-->
+        <div id="llista">
+            <ul id="ul_llista"></ul>
         </div>
-        
     </div>
-    <!--Panell dreta-->
-    <div id="dreta">
-        <button id="addcash" onclick="tragaperras_UF3().afegeixDiners()">INSERT COINS</button>
-        <br />
-        <button id="exit" onclick="tragaperras_UF3().mostraWallet()">EXIT</button>
-
-    </div>
-    <!--Panell llista-->
-    <div id="llista">
-        <ul id="ul_llista"></ul>
-    </div>
-    <!--Panell inferior-->
-    <div id="inferior">
-        <button id="play" onclick="tragaperras_UF3().cridaExterna()">PLAY!</button>
-    </div>
-    <!--Historial (format llista)-->
-
 </body>

@@ -21,8 +21,8 @@ var tragaperras_UF3 = function () {
         let combinacio = [];
         if (tragaperras_UF3.monedero >= 1) {
             tragaperras_UF3.monedero -= 1;
+            afegeixLllista("Has gastado 1€. Tienes " + tragaperras_UF3.monedero +"€");
             actualitzaUI();
-
             combinacio = generaCombinacion();
             colocaFrutas(...combinacio);
             analitzaJugada(combinacio);
@@ -30,26 +30,23 @@ var tragaperras_UF3 = function () {
     }
 
     function analitzaJugada(combinacio) {
-
         //cereza
         let cereza = 0;
         combinacio.forEach(function (numero) {
             if (numero === 0) { cereza++; }
         });
         if (cereza != 0) {
+            afegeixLllista("Premio!");
             if (cereza === 1) { afegeixDiners(1) }
             else if (cereza === 2) { afegeixDiners(4) }
             else { { afegeixDiners(10) } }
         }
-
-
     }
 
     function afegeixLllista(text) {
         let li = document.createElement("li");
         li.innerHTML=text;
         llista.appendChild(li);
-       
     }
 
     function mostraWallet() {
@@ -59,7 +56,7 @@ var tragaperras_UF3 = function () {
     function generaCombinacion() {
         const NUM_MAXIM_OPCIONS = 6;
         let combinacio = [];
-        ;
+       
         for (let i = 0; i < 3; i++) {
             combinacio.push(Math.floor(Math.random() * NUM_MAXIM_OPCIONS));
         }
@@ -67,7 +64,6 @@ var tragaperras_UF3 = function () {
     }
 
     function colocaFrutas(a, b, c) {
-        //alert("a:" + a + "b:"+b + "c:"+c);
         slot1.src = FRUTAS[a];
         slot2.src = FRUTAS[b];
         slot3.src = FRUTAS[c];
@@ -77,13 +73,14 @@ var tragaperras_UF3 = function () {
         //TODO
         
         tragaperras_UF3.monedero += quantitat;
-        
+        afegeixLllista("Has añadido " + quantitat +"€. Tienes " + tragaperras_UF3.monedero +"€");
         actualitzaUI();
     }
 
     // cridem aquesta funció cada cop que hi ha moviment de diners
+    // i/o entrades a l'historial
     function actualitzaUI() {
-        afegeixLllista("Els diners ara són " + tragaperras_UF3.monedero);
+        //afegeixLllista("Tens " + tragaperras_UF3.monedero +"€");
         monedero_vista.innerHTML = formateaMonedero();
         if (tragaperras_UF3.monedero <= 0) {
             boto_exit.disabled = true;
@@ -105,10 +102,8 @@ var tragaperras_UF3 = function () {
         const NUM_CIFRAS = 4;
         let fmonedero = tragaperras_UF3.monedero.toString();// Int to String
         let amonedero = fmonedero.split(""); // String to Array
-        //alert("longitut inicial" + amonedero.length);
 
         while (NUM_CIFRAS - amonedero.length > 0) {
-            //alert("longitut interna"  + amonedero.length);
             amonedero.unshift("0");
         }
         amonedero.push(" €");
@@ -129,6 +124,7 @@ var tragaperras_UF3 = function () {
         inicia: inicialitzacion
     }
 }
+
 //Funció autoexecutable que es crida a sí mateixa.
 //al cargar el script 
 var init_tragaperras_UF3 = (function () {
