@@ -1,14 +1,14 @@
 body {
     background-color: #004FB3;
     font-size: 16px;
-   
+    color: #004FB3;
 }
 
 button {
     width: 12em;
     padding: 0.4em 1em;
     margin-bottom: 1em;
-    margin-right: 1em;
+    margin-right: 1.5em;
     background-color: #FFC14F;
     border: none;
     text-align: center;
@@ -18,28 +18,28 @@ button {
     border: 2px solid #FFAB0D;
     border-radius: 0.3em;
     font-family: sans-serif;
-    
 }
 
 button:hover {
     background-color: white;
     color: #FFAB0D;
-    
 }
+
 button:disabled {
     background-color: grey;
     color: white;
     border: 2px solid whitesmoke;
     opacity: 50%;
 }
+
 ul {
-    list-style-type: none;
+    list-style-type: circle;
     margin: 0;
-    padding: 0;
-  }
+    padding: 0em 1em;
+    font-family: Consolas, monaco, monospace;
+}
 
 img.frutas {
-    
     width: 100px;
     height: 100px;
 }
@@ -59,50 +59,57 @@ img.frutas {
 }
 
 #inferior {
-    float:left;
+    float: left;
     padding: 2em 1em 1em 0em;
     width: 36em;
 }
+
 #inferior button {
     width: 26em;
 }
-#llista{
-    float:left;
+
+#llista {
+    float: left;
     width: 18em;
-    color:green;;
-    
-}
-#dreta{
-    float:left:
-    width: 18em;
+    color: green;
 }
 
-#central{
-  width: 36em;  
-  padding: 1em 1em 1em 1em;
-   
+#dreta {
+    float:left;
+     width: 36em;
 }
-#contador{
+
+#central {
+    width: 36em;
+    padding: 1em 1em 1em 1em;
+}
+
+#contador {
     width: 36em;
 }
+
 #monedero {
     margin-left: 1em;
     padding: 1em 0.1em 0.1em 2em;
     font-family: monospace;
     font-size: 4em;
-    color:whitesmoke;
+    color: whitesmoke;
     text-align: left;
 }
-#left{
-    float:left;
-    width:30%;
+
+#left {
+    float: left;
+    width: 30%;
 }
-#center{
-    float:left;
-    width:40%;
+
+#center {
+    float: left;
+    width: 40%;
 }
-#right{
-    padding: 4em 1em 1em 1em;
-    float:left;
+
+#right {
+    margin-top: 10em;
+    padding: 1em 1em 1em 1em;
+    float: left;
     background: #2E2E2E;
 }

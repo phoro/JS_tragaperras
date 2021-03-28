@@ -6,7 +6,7 @@ Se trata de crear una máquina tragaperras siguiendo los siguientes pasos:
     Introducir antes de empezar la partida un número de monedas con el que quiere empezar a jugar, no podrá volver a introducir monedas, por lo que tendremos que desactivar la opción de insertar más.
     Añadir un botón "Tirar", en este momento gastará una moneda y mostrará las tres imágenes aleatorias.
     Añadir un botón "Salir", para que muestre una alerta el número total de monedas. **
-    Mostrar en formato lista el historial de monedas ganadas y perdidas en cada tirada.
+    Mostrar en formato lista el historial de monedas ganadas y perdidas en cada tirada.**
 
 ¿Cómo conseguirá dinero el usuario?
 
@@ -19,6 +19,3 @@ Puede ganar dinero siguientes premios:
     Si salen tres hortalizas iguales que no sean zanahorias, se ganan cinco monedas.
     Si sale una zanahoria y dos hortalizas iguales, se ganan tres monedas.
 
-4 4 0
-4 3 1
-4 2 2
