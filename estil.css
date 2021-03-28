@@ -12,10 +12,11 @@ button {
     border: none;
     text-align: center;
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 1em;
     border: 2px solid #FFAB0D;
     border-radius: 0.3em;
+    font-family: sans-serif;
     
 }
 
@@ -32,6 +33,12 @@ button:disabled {
     opacity: 50%;
     
 }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
 
 img.frutas {
     width: 100px;
@@ -58,8 +65,28 @@ img.frutas {
 #inferior {
     clear: both;
     padding: 5em 1em 1em 5em;
+    width: 36em;
 }
-
+#inferior button {
+    width: 26em;
+}
+#llista{
+    float:left;
+    width: 18em;
+    color:white;
+    
+}
+#dreta{
+    float:left;
+    width: 18em;
+}
+#contador{
+    width: 36em;
+}
+#central{
+  width: 36em;  
+    margin-left:1em;
+}
 #monedero {
     margin-left: 3em;
     padding: 1em 0.1em 0.1em 2em;
