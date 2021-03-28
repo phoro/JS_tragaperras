@@ -12,9 +12,9 @@ Se trata de crear una máquina tragaperras siguiendo los siguientes pasos:
 
 Puede ganar dinero siguientes premios:
 
-    Si sale una zanahoria, se gana una moneda.
-    Si salen dos zanahorias, se ganan cuatro monedas.
-    Si salen tres zanahorias, se ganan diez monedas.
+    Si sale una zanahoria, se gana una moneda. **
+    Si salen dos zanahorias, se ganan cuatro monedas.**
+    Si salen tres zanahorias, se ganan diez monedas.**
     Si salen dos hortalizas iguales que no sean zanahorias, se ganan dos monedas.
     Si salen tres hortalizas iguales que no sean zanahorias, se ganan cinco monedas.
     Si sale una zanahoria y dos hortalizas iguales, se ganan tres monedas.

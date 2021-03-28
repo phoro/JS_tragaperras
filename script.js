@@ -17,88 +17,111 @@ var tragaperras_UF3 = function () {
 
     function juga() {
 
+        let combinacio = [];
         if (tragaperras_UF3.monedero >= 1) {
             tragaperras_UF3.monedero -= 1;
             actualitzaUI();
 
-            colocaFrutas(...generaCombinacion());
+            combinacio = generaCombinacion();
+            colocaFrutas(...combinacio);
+            analitzaJugada(combinacio);
         }
     }
 
-    function mostraWallet() {
-        alert("Monedas Totales: " + tragaperras_UF3.monedero);
-    }
+    function analitzaJugada(combinacio) {
 
-    function generaCombinacion() {
-        const NUM_MAXIM_OPCIONS = 6;
-        let combinacio = [];
-        ;
-        for (let i = 0; i < 3; i++) {
-            combinacio.push(Math.floor(Math.random() * NUM_MAXIM_OPCIONS));
-        }
-        return combinacio;
-    }
-
-    function colocaFrutas(a, b, c) {
-        //alert("a:" + a + "b:"+b + "c:"+c);
-        slot1.src = FRUTAS[a];
-        slot2.src = FRUTAS[b];
-        slot3.src = FRUTAS[c];
-    }
-
-    function afegeixDiners() {
-        //TODO
-        tragaperras_UF3.monedero += 10;
-        actualitzaUI();
-    }
-    // cridem aquesta funció cada cop que hi ha moviment de diners
-    function actualitzaUI() {
-
-        monedero_vista.innerHTML = formateaMonedero();
-        if (tragaperras_UF3.monedero <= 0) {
-            boto_exit.disabled = true;
-            boto_play.disabled = true;
-            boto_addcash.disabled = false;
-
-        } else {
-            boto_exit.disabled = false;
-            boto_addcash.disabled = true;
-            boto_play.disabled = false;
+        //cereza
+        let cereza = 0;
+        combinacio.forEach(function (numero) {
+            if (numero === 0) { cereza++; }
+        });
+        if (cereza!=0){
+            if (cereza === 1){afegeixDiners(1)}
+            else if (cereza === 2) {afegeixDiners(4)}
+            else {{afegeixDiners(10)}}
         }
 
+
     }
 
-    /**
-     * Lee el monedero
-     * @returns cadena monedero en formato de 4 cifras
-     */
-    function formateaMonedero() {
-        const NUM_CIFRAS = 4;
-        let fmonedero = tragaperras_UF3.monedero.toString();// Int to String
-        let amonedero = fmonedero.split(""); // String to Array
-        //alert("longitut inicial" + amonedero.length);
 
-        while (NUM_CIFRAS - amonedero.length > 0) {
-            //alert("longitut interna"  + amonedero.length);
-            amonedero.unshift("0");
-        }
 
-        return amonedero.join('');
+
+
+function mostraWallet() {
+    alert("Monedas Totales: " + tragaperras_UF3.monedero);
+}
+
+function generaCombinacion() {
+    const NUM_MAXIM_OPCIONS = 6;
+    let combinacio = [];
+    ;
+    for (let i = 0; i < 3; i++) {
+        combinacio.push(Math.floor(Math.random() * NUM_MAXIM_OPCIONS));
     }
+    return combinacio;
+}
 
-    function inicialitzacion() {//inicialització
-        tragaperras_UF3.monedero = 0;
+function colocaFrutas(a, b, c) {
+    //alert("a:" + a + "b:"+b + "c:"+c);
+    slot1.src = FRUTAS[a];
+    slot2.src = FRUTAS[b];
+    slot3.src = FRUTAS[c];
+}
+
+function afegeixDiners(quantitat = 10) {
+    //TODO
+
+    tragaperras_UF3.monedero += quantitat;
+    actualitzaUI();
+}
+
+// cridem aquesta funció cada cop que hi ha moviment de diners
+function actualitzaUI() {
+    monedero_vista.innerHTML = formateaMonedero();
+    if (tragaperras_UF3.monedero <= 0) {
         boto_exit.disabled = true;
         boto_play.disabled = true;
-        //alert("inicialitzat ");
-    }
+        boto_addcash.disabled = false;
 
-    return {
-        cridaExterna: juga,
-        mostraWallet: mostraWallet,
-        afegeixDiners: afegeixDiners,
-        inicia: inicialitzacion
+    } else {
+        boto_exit.disabled = false;
+        boto_addcash.disabled = true;
+        boto_play.disabled = false;
     }
+}
+
+/**
+ * Lee el monedero
+ * @returns cadena monedero en formato de 4 cifras
+ */
+function formateaMonedero() {
+    const NUM_CIFRAS = 4;
+    let fmonedero = tragaperras_UF3.monedero.toString();// Int to String
+    let amonedero = fmonedero.split(""); // String to Array
+    //alert("longitut inicial" + amonedero.length);
+
+    while (NUM_CIFRAS - amonedero.length > 0) {
+        //alert("longitut interna"  + amonedero.length);
+        amonedero.unshift("0");
+    }
+    amonedero.push(" €");
+    return amonedero.join('');
+}
+
+function inicialitzacion() {//inicialització
+    tragaperras_UF3.monedero = 0;
+    boto_exit.disabled = true;
+    boto_play.disabled = true;
+    //alert("inicialitzat ");
+}
+
+return {
+    cridaExterna: juga,
+    mostraWallet: mostraWallet,
+    afegeixDiners: afegeixDiners,
+    inicia: inicialitzacion
+}
 }
 //Funció autoexecutable que es crida a sí mateixa.
 //al cargar el script 

@@ -1,6 +1,7 @@
 body {
     background-color: #004FB3;
     font-size: 16px;
+   
 }
 
 button {
@@ -60,7 +61,10 @@ img.frutas {
 }
 
 #monedero {
+    margin-left: 3em;
     padding: 1em 0.1em 0.1em 2em;
     font-family: monospace;
     font-size: 4em;
+    color:whitesmoke;
+    text-align: left;
 }
