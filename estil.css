@@ -1,0 +1,66 @@
+body {
+    background-color: #004FB3;
+    font-size: 16px;
+}
+
+button {
+    width: 10em;
+    padding: 0.4em 1em;
+    margin-bottom: 1em;
+    background-color: #FFC14F;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    border: 2px solid #FFAB0D;
+    border-radius: 0.3em;
+    
+}
+
+button:hover {
+    background-color: white;
+    
+    color: #FFAB0D;
+    
+}
+button:disabled {
+    background-color: grey;
+    color: white;
+    border: none;
+    opacity: 50%;
+    
+}
+
+img.frutas {
+    width: 100px;
+    height: 100px;
+}
+
+.frutas {
+    width: 100px;
+    height: 100px;
+    background: white;
+    float: left;
+    margin-right: 2em;
+    border-style: solid;
+}
+
+#marcador {
+    padding: 5em 1em 0.2em 5em;
+}
+
+#central {
+    padding: 1em 1em 1em 5em;
+}
+
+#inferior {
+    clear: both;
+    padding: 5em 1em 1em 5em;
+}
+
+#monedero {
+    padding: 1em 0.1em 0.1em 2em;
+    font-family: monospace;
+    font-size: 4em;
+}
