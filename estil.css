@@ -39,6 +39,12 @@ ul {
     font-family: Consolas, monaco, monospace;
 }
 
+#llista {
+    float: left;
+    width: 18em;
+    color: green;
+}
+
 img.frutas {
     width: 100px;
     height: 100px;
@@ -54,34 +60,20 @@ img.frutas {
     border-style: solid;
 }
 
-#marcador {
-    padding: 5em 1em 0.2em 5em;
-}
-
-#inferior {
+#panell_play {
     float: left;
     padding: 2em 1em 1em 0em;
     width: 36em;
 }
 
-#inferior button {
+#panell_play button {
     width: 26em;
 }
 
-#llista {
-    float: left;
-    width: 18em;
-    color: green;
-}
 
-#dreta {
-    float:left;
-     width: 36em;
-}
-
-#central {
+#panell_botons {
     width: 36em;
-    padding: 1em 1em 1em 1em;
+    padding: 1em 0.1em 1em 0.1em;
 }
 
 #contador {
@@ -89,12 +81,13 @@ img.frutas {
 }
 
 #monedero {
-    margin-left: 1em;
-    padding: 1em 0.1em 0.1em 2em;
-    font-family: monospace;
+    margin-left:0.1em;
+    padding: 1em 0em 0.1em 0em;
+    font-family: Calibri;
     font-size: 4em;
     color: whitesmoke;
     text-align: left;
+    letter-spacing: 0.1em;
 }
 
 #left {
@@ -112,4 +105,5 @@ img.frutas {
     padding: 1em 1em 1em 1em;
     float: left;
     background: #2E2E2E;
+    
 }

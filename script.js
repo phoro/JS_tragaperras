@@ -15,13 +15,11 @@ var tragaperras_UF3 = function () {
 
     var monedero;
 
-
     function juga() {
-
         let combinacio = [];
         if (tragaperras_UF3.monedero >= 1) {
             tragaperras_UF3.monedero -= 1;
-            afegeixLllista("Has gastado 1€. Tienes " + tragaperras_UF3.monedero +"€");
+            afegeixLllista("Has gastado 1€. Tienes " + tragaperras_UF3.monedero + "€");
             actualitzaUI();
             combinacio = generaCombinacion();
             colocaFrutas(...combinacio);
@@ -30,22 +28,49 @@ var tragaperras_UF3 = function () {
     }
 
     function analitzaJugada(combinacio) {
-        //cereza
-        let cereza = 0;
+
+        let cereza = 0, pina = 0, limon = 0, fresa = 0, platano = 0, naranja = 0;
+
+        //Analitza les repeticions
         combinacio.forEach(function (numero) {
-            if (numero === 0) { cereza++; }
+            if (numero === 0) { cereza++; };
+            if (numero === 1) { pina++; };
+            if (numero === 2) { limon++; };
+            if (numero === 3) { fresa++; };
+            if (numero === 4) { platano++; };
+            if (numero === 5) { naranja++; };
         });
-        if (cereza != 0) {
+
+        //Concedeix els premis
+        if (cereza != 0) { // premis amb cereza
             afegeixLllista("Premio!");
-            if (cereza === 1) { afegeixDiners(1) }
+            if (cereza === 1) {
+                if (pina > 1 || limon > 1 || fresa > 1 || platano > 1 || naranja > 1) {
+                    afegeixDiners(3);
+                } else {
+                    afegeixDiners(1);
+                }
+            }
             else if (cereza === 2) { afegeixDiners(4) }
             else { { afegeixDiners(10) } }
+        } else { //premis sense cereza
+            if (pina > 1 || limon > 1 || fresa > 1 || platano > 1 || naranja > 1) {
+                if (pina > 2 || limon > 2 || fresa > 2 || platano > 2 || naranja > 2) {
+                    //Tres iguals
+                    afegeixDiners(5);
+                } else{
+                    //Dos iguals
+                    afegeixDiners(2);
+                }
+            }
+
+
         }
     }
 
     function afegeixLllista(text) {
         let li = document.createElement("li");
-        li.innerHTML=text;
+        li.innerHTML = text;
         llista.appendChild(li);
     }
 
@@ -56,7 +81,7 @@ var tragaperras_UF3 = function () {
     function generaCombinacion() {
         const NUM_MAXIM_OPCIONS = 6;
         let combinacio = [];
-       
+
         for (let i = 0; i < 3; i++) {
             combinacio.push(Math.floor(Math.random() * NUM_MAXIM_OPCIONS));
         }
@@ -71,9 +96,9 @@ var tragaperras_UF3 = function () {
 
     function afegeixDiners(quantitat = 10) {
         //TODO
-        
+
         tragaperras_UF3.monedero += quantitat;
-        afegeixLllista("Has añadido " + quantitat +"€. Tienes " + tragaperras_UF3.monedero +"€");
+        afegeixLllista("Has añadido " + quantitat + "€. Tienes " + tragaperras_UF3.monedero + "€");
         actualitzaUI();
     }
 
