@@ -63,8 +63,6 @@ var tragaperras_UF3 = function () {
                     afegeixDiners(2);
                 }
             }
-
-
         }
     }
 
@@ -143,7 +141,7 @@ var tragaperras_UF3 = function () {
     }
 
     return {
-        cridaExterna: juga,
+        play: juga,
         mostraWallet: mostraWallet,
         afegeixDiners: afegeixDiners,
         inicia: inicialitzacion
