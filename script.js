@@ -32,6 +32,9 @@ var tragaperras_UF3 = function () {
     const boto_play = document.getElementById("play");
     const llista = document.getElementById("ul_llista");
 
+    var pista1 = document.getElementById("pista1");
+    var pista2 = document.getElementById("pista2");
+
     // Moneder de l'aplicació
     var monedero;
 
@@ -41,6 +44,10 @@ var tragaperras_UF3 = function () {
      */
     function juga() {
         let combinacio = [];
+        let so_juga = 'issue/img/sounds/mixkit-video-game-mystery-alert-234.wav';
+
+        sona(so_juga, 1);
+
         if (tragaperras_UF3.monedero >= 1) {
             tragaperras_UF3.monedero -= 1;
             afegeixLlista("Has gastado 1€. Tienes " + tragaperras_UF3.monedero + "€");
@@ -70,6 +77,7 @@ var tragaperras_UF3 = function () {
 
         //Concedeix els premis
         if (cereza != 0) { // premis amb cereza
+
             afegeixLlista("Premio!");
             if (cereza === 1) {
                 if (pina > 1 || limon > 1 || fresa > 1 || platano > 1 || naranja > 1) {
@@ -82,11 +90,12 @@ var tragaperras_UF3 = function () {
             else { { afegeixDiners(10) } }
         } else { //premis sense cereza
             if (pina > 1 || limon > 1 || fresa > 1 || platano > 1 || naranja > 1) {
+
                 afegeixLlista("Premio!");
                 if (pina > 2 || limon > 2 || fresa > 2 || platano > 2 || naranja > 2) {
                     //Tres iguals
                     afegeixDiners(5);
-                } else{
+                } else {
                     //Dos iguals
                     afegeixDiners(2);
                 }
@@ -142,11 +151,18 @@ var tragaperras_UF3 = function () {
      * @param {*} quantitat Monedes per afegir al monedero
      */
     function afegeixDiners(quantitat = 10) {
-        //TODO
+        let so_diners;
+
+        if (tragaperras_UF3.monedero === 0) {//si s'afegeix diners per primer cop
+            so_diners = 'issue/img/sounds/mixkit-winning-a-coin-video-game-2069.wav';
+        } else {
+            so_diners = 'issue/img/sounds/mixkit-winning-chimes-2015.wav';
+        }
 
         tragaperras_UF3.monedero += quantitat;
         afegeixLlista("Has añadido " + quantitat + "€. Tienes " + tragaperras_UF3.monedero + "€");
         actualitzaUI();
+        sona(so_diners, 2);
     }
 
     /**
@@ -184,6 +200,16 @@ var tragaperras_UF3 = function () {
         return amonedero.join('');
     }
 
+    function sona(src, pista) {
+        if (pista === 1) {
+            pista1.src = src;
+            pista1.play();
+        } else {
+            pista2.src = src;
+            pista2.play();
+        }
+    }
+
     /**
      * Inicialització de paràmetres.
      */
@@ -191,6 +217,8 @@ var tragaperras_UF3 = function () {
         tragaperras_UF3.monedero = 0;
         boto_exit.disabled = true;
         boto_play.disabled = true;
+        pista1.hidden = true;
+        pista2.hidden = true;
     }
 
     // Funcions accessibles des de crides externes
