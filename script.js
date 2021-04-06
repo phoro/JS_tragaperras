@@ -1,4 +1,13 @@
 /**
+ * @fileoverview Aplicació encapsulada 'TragaPerras'
+ * @author Robert Guiral
+ * 
+ * Màquina escurabutxaques
+ */
+
+
+
+/**
  * Espai de noms de l'aplicació.
  * Encapsulament.
  * @returns funcions accessibles:
@@ -36,7 +45,7 @@ var tragaperras_UF3 = function () {
             tragaperras_UF3.monedero -= 1;
             afegeixLlista("Has gastado 1€. Tienes " + tragaperras_UF3.monedero + "€");
             actualitzaUI();
-            combinacio = generaCombinacion();
+            combinacio = generaCombinacio();
             colocaFrutas(...combinacio);
             analitzaJugada(combinacio);
         }
@@ -49,7 +58,7 @@ var tragaperras_UF3 = function () {
     function analitzaJugada(combinacio) {
         let cereza = 0, pina = 0, limon = 0, fresa = 0, platano = 0, naranja = 0;
 
-        //Analitza les repeticions
+        //Conta les aparicions
         combinacio.forEach(function (numero) {
             if (numero === 0) { cereza++; };
             if (numero === 1) { pina++; };
@@ -73,6 +82,7 @@ var tragaperras_UF3 = function () {
             else { { afegeixDiners(10) } }
         } else { //premis sense cereza
             if (pina > 1 || limon > 1 || fresa > 1 || platano > 1 || naranja > 1) {
+                afegeixLlista("Premio!");
                 if (pina > 2 || limon > 2 || fresa > 2 || platano > 2 || naranja > 2) {
                     //Tres iguals
                     afegeixDiners(5);
@@ -105,7 +115,7 @@ var tragaperras_UF3 = function () {
      * Genera una combinació aleatòria de tres números.
      * @returns Array amb tres valors aleatoris
      */
-    function generaCombinacion() {
+    function generaCombinacio() {
         const NUM_MAXIM_OPCIONS = 6;
         let combinacio = [];
 
