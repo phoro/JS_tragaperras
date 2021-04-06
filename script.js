@@ -200,6 +200,11 @@ var tragaperras_UF3 = function () {
         return amonedero.join('');
     }
 
+    /**
+     * Reprodueix un recurs d'audio. Té dues pistes
+     * @param {*} src uri del recurs
+     * @param {*} pista número de pista
+     */
     function sona(src, pista) {
         if (pista === 1) {
             pista1.src = src;
