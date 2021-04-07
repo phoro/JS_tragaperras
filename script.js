@@ -63,36 +63,37 @@ var tragaperras_UF3 = function () {
      * @param {*} combinacio array amb tres valors corresponents als índexs de l'array de fruites 
      */
     function analitzaJugada(combinacio) {
-        let cereza = 0, pina = 0, limon = 0, fresa = 0, platano = 0, naranja = 0;
+        let zanahoria = 0, aguacate = 0, ajo = 0, cebolla = 0, pepino = 0, puerro = 0, tomate = 0;
 
         //Conta les aparicions
         combinacio.forEach(function (numero) {
-            if (numero === 0) { cereza++; };
-            if (numero === 1) { pina++; };
-            if (numero === 2) { limon++; };
-            if (numero === 3) { fresa++; };
-            if (numero === 4) { platano++; };
-            if (numero === 5) { naranja++; };
+            if (numero === 0) { zanahoria++; };
+            if (numero === 1) { aguacate++; };
+            if (numero === 2) { ajo++; };
+            if (numero === 3) { cebolla++; };
+            if (numero === 4) { pepino++; };
+            if (numero === 5) { puerro++; };
+            if (numero === 6) { tomate++; };
         });
 
         //Concedeix els premis
-        if (cereza != 0) { // premis amb cereza
+        if (zanahoria != 0) { // premis amb zanahoria
 
             afegeixLlista("Premio!");
-            if (cereza === 1) {
-                if (pina > 1 || limon > 1 || fresa > 1 || platano > 1 || naranja > 1) {
+            if (zanahoria === 1) {
+                if (aguacate > 1 || ajo > 1 || cebolla > 1 || pepino > 1 || puerro > 1 || tomate > 1) {
                     afegeixDiners(3);
                 } else {
                     afegeixDiners(1);
                 }
             }
-            else if (cereza === 2) { afegeixDiners(4) }
+            else if (zanahoria === 2) { afegeixDiners(4) }
             else { { afegeixDiners(10) } }
-        } else { //premis sense cereza
-            if (pina > 1 || limon > 1 || fresa > 1 || platano > 1 || naranja > 1) {
+        } else { //premis sense zanahoria
+            if (aguacate > 1 || ajo > 1 || cebolla > 1 || pepino > 1 || puerro > 1 || tomate > 1) {
 
                 afegeixLlista("Premio!");
-                if (pina > 2 || limon > 2 || fresa > 2 || platano > 2 || naranja > 2) {
+                if (aguacate > 2 || ajo > 2 || cebolla > 2 || pepino > 2 || puerro > 2 || tomate > 2) {
                     //Tres iguals
                     afegeixDiners(5);
                 } else {
