@@ -51,13 +51,13 @@ img.frutas {
 }
 
 .frutas {
-    margin-left: 1em;
+    margin-left: 1.3em;
     width: 100px;
     height: 100px;
     background: white;
     float: left;
     margin-right: 1em;
-    border-style: solid;
+    border-radius: 1.1em;
 }
 
 #panell_play {
