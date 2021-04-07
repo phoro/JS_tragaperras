@@ -19,7 +19,7 @@
 var tragaperras_UF3 = function () {
 
     //Array amb les imatges de les fruites
-    const FRUTAS = ['./issue/img/1_cereza.svg', './issue/img/2_pina.svg', './issue/img/3_limon.svg', './issue/img/4_fresa.svg', './issue/img/5_platano.svg', './issue/img/6_naranja.svg'];
+    const FRUTAS = ['./issue/img/0_zanahoria.png', './issue/img/1_aguacate.png', './issue/img/2_ajo.png', './issue/img/3_cebolla.png', './issue/img/4_pepino.png', './issue/img/5_puerro.png','issue/img/6_tomate.png'];
 
     // Elements del DOM
     const slot1 = document.getElementById("slot1");
@@ -44,7 +44,7 @@ var tragaperras_UF3 = function () {
      */
     function juga() {
         let combinacio = [];
-        let so_juga = 'issue/img/sounds/mixkit-video-game-mystery-alert-234.wav';
+        let so_juga = 'issue/sounds/mixkit-video-game-mystery-alert-234.wav';
 
         sona(so_juga, 1);
 
@@ -125,7 +125,7 @@ var tragaperras_UF3 = function () {
      * @returns Array amb tres valors aleatoris
      */
     function generaCombinacio() {
-        const NUM_MAXIM_OPCIONS = 6;
+        const NUM_MAXIM_OPCIONS = 7;
         let combinacio = [];
 
         for (let i = 0; i < 3; i++) {
@@ -154,9 +154,9 @@ var tragaperras_UF3 = function () {
         let so_diners;
 
         if (tragaperras_UF3.monedero === 0) {//si s'afegeix diners per primer cop
-            so_diners = 'issue/img/sounds/mixkit-winning-a-coin-video-game-2069.wav';
+            so_diners = 'issue/sounds/mixkit-winning-a-coin-video-game-2069.wav';
         } else {
-            so_diners = 'issue/img/sounds/mixkit-winning-chimes-2015.wav';
+            so_diners = 'issue/sounds/mixkit-winning-chimes-2015.wav';
         }
 
         tragaperras_UF3.monedero += quantitat;
